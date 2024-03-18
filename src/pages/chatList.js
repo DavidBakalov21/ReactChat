@@ -12,7 +12,7 @@ function ChatList() {
     if (email1 !== null) {
       console.log(email1);
       axios
-        .post("http://localhost:5000/display", {
+        .post("https://db1243433.pythonanywhere.com/display", {
           email: email1,
         })
         .then((response) => {

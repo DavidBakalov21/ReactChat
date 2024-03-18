@@ -7,14 +7,14 @@ import axios from "axios";
 import io from "socket.io-client";
 function Chat() {
   async function saveMessages(room, message, id) {
-    await axios.post("http://localhost:5000/saveMessage", {
+    await axios.post("https://db1243433.pythonanywhere.com/saveMessage", {
       room: room,
       message: message,
       sender: sessionStorage.getItem("user"),
       id: id,
     });
   }
-  const SOCKET_IO_URL = "http://localhost:5000";
+  const SOCKET_IO_URL = "https://db1243433.pythonanywhere.com/";
   let { email } = useParams();
   const [list, SetList] = useState([]);
   const [message, setMessage] = useState("");
@@ -31,7 +31,7 @@ function Chat() {
     const roomId = generateRoomName(sessionStorage.getItem("user"), email);
     setRoomId(roomId);
     axios
-      .post("http://localhost:5000/loadMessage", {
+      .post("https://db1243433.pythonanywhere.com/loadMessage", {
         room: roomId,
       })
       .then((response) => {

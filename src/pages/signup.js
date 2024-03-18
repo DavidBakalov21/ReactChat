@@ -15,7 +15,7 @@ function Register() {
     const last_name = formData.get("last_name");
 
     axios
-      .post("http://localhost:5000/singUp", {
+      .post("https://db1243433.pythonanywhere.com/singUp", {
         email: email,
         password: password,
         first_name: first_name,

@@ -11,7 +11,7 @@ function Login() {
     const password = formData.get("password");
 
     axios
-      .post("http://localhost:5000/singIn", {
+      .post("https://db1243433.pythonanywhere.com/singIn", {
         email: email,
         password: password,
       })
